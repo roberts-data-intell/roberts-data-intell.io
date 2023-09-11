@@ -894,7 +894,7 @@ nav#bottom-nav {
 footer {
     background-color:  #65a1fa;
     text-align: center;
-    padding: 0em;
+    padding: none;
     width: 100%;
     position: relative;  /* Relative positioning */
   }
@@ -908,12 +908,12 @@ footer {
     background-color: #65a1fa;
     height: 3em;
     color: white;
-    padding: 0em;
+    padding: none;
   }
   
   nav#bottom-nav ul {
     list-style-type: none;
-    padding: 3px;
+    padding: none;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -926,7 +926,7 @@ footer {
   nav#bottom-nav li a {
     color: white;
     text-decoration: none;
-    padding: 5px;
+    padding: 10px;
   }
 
   nav#bottom-nav li a:hover {
