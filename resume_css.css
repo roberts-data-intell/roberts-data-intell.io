@@ -206,7 +206,7 @@ main {
 footer {
     background-color: #f4f4f4;
     text-align: center;
-    padding: 1em;
+    padding: 0em;
     position: fixed; /* Fixes the position */
     bottom: 0;  /* Aligns the footer to the bottom */
     left: 0;  /* Aligns the footer to the left */
