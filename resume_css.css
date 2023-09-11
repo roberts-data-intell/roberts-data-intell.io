@@ -196,7 +196,7 @@ z-index: 999;
 
 
 
-/*      -------- MAIN  -----------------------------------                              */
+/*  ---------------------------------------------- MAIN  -----------------------------------                              */
 
 main {
     padding: 20px;
@@ -484,7 +484,7 @@ footer {
 /* Caption text */
 .text {
   color: #070101;              /* Text color */
-  font-size: 30px;              /* Font size */
+  font-size: 15px;              /* Font size */
   padding: 8px 12px;            /* Padding around the text */
   position: absolute;           /* Absolute positioning */
   bottom: 8px;                  /* Position from the bottom */
@@ -712,7 +712,7 @@ footer {
 
     
 
-/*------------------------------------------------------------------ Phone--------------------------------- */
+/*----------------------------------------------------800 below ------- Phone--------------------------------- */
 /*----  MOBILE -----------------*/
 
 @media screen and (max-width: 800px) {
@@ -749,13 +749,19 @@ footer {
     }
     
     .mobile-container {
-      max-width: 480px;
+      max-width: 60%;
       margin: auto;
       background-color: #555;
       height: 500px;
       color: white;
       border-radius: 10px;
-    }
+      padding: 20px; /* Add 20 pixels of padding inside the container */
+  }
+
+  
+  
+  
+  
     
     .topnav {
       overflow: hidden;
@@ -850,7 +856,7 @@ footer {
 .falling-binary {
   position: absolute;
   font-size: 1em;
-  color: #3f9dea; /* Classic green color */
+  color: #0ca83b; /* Classic green color */
   opacity: 0.8;
   white-space: nowrap;
   /*---Increase the duration range to slow down the animation -- */
@@ -874,7 +880,7 @@ footer {
 
 /* ---------------------------------------------  Main ------------------------*/
 main {
-    padding: 00px;
+    padding: 40px;
 }
 
 /* Fixed bottom navigation ------------------------------------------------------------*/
@@ -932,5 +938,226 @@ footer {
   nav#bottom-nav li a:hover {
     background-color: #2daaf3;
 }
+
+/*-------------------------------------------------------500-- Phone--------------------------------- */
+/*----  MOBILE -----------------*/
+
+@media screen and (max-width: 500px) {
+
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+    
+    }
+
+/*---- h3 mobile -----------------*/
+    h3 {
+      font-size: .75em;
+      position: sticky;
+      color:#000000;
+      /* Added for centering */
+      text-align: center;  /* Horizontally center */
+      display: flex;       /* Prepare for vertical alignment */
+      align-items: center; /* Vertically center */
+      justify-content: center; /* Also helps in horizontally centering */
+      padding-top: 0.75em;
+    }
+    
+/*-------------------------     H4  mobile -----------------------------             --*/
+    h4 {
+      font-size: 1.0rem;
+      position: sticky;
+      text-shadow: 2px 2px 4px #366ee6;
+      /* Added for centering */
+      text-align: center;  /* Horizontally center */
+      display: flex;       /* Prepare for vertical alignment */
+      align-items: center; /* Vertically center */
+      justify-content: center; /* Also helps in horizontally centering */
+      padding-top: 0em;
+    }
+    
+    .mobile-container {
+      max-width: 300px;
+      margin: auto;
+      background-color: #555;
+      height: Auto;
+      color: white;
+      border-radius: 10px;
+      padding: 20px; /* Add 20 pixels of padding inside the container */
+  }
+    
+    .topnav {
+      overflow: hidden;
+      background-color: #6bc9f5;
+      position: relative;
+    }
+    
+    .topnav #myLinks {
+      display: none;
+    }
+    
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+    
+    .topnav a.icon {
+      background: black;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    
+    .active {
+      background-color: #18c1f5;
+      color: white;
+    }
+   
+/* -------------------------------------------------------- social --------------------*/
+
+    #socialnavfooter {
+        flex-direction: row; /* Keeps it in a row but you can change it to column if you like */
+        justify-content: space-between;
+        max-width: 100%; /* You can adjust this */
+      }
+    
+
+    main {
+        padding: 10px;
+    }
+
+    #pdf-embed {
+        height: 400px; /* Further reduced height for phones */
+    }
+    .download-button {
+        padding: 10px 20px;  /* Further reduced padding */
+        font-size: 12px;  /* Further reduced font size */
+    }
+
+    #contact-form input, 
+    #contact-form textarea, 
+    #contact-form button {
+        font-size: 12px;
+    }
+    .carousel-image {
+        width: 80%;  /* Keeps the width at 80% for phones */
+    }
+  }
+
+/* -------------------------- rdi_logo.png  mobile -------------------------*/
+
+#logo {
+  height: 40px; /* Or any size that you prefer */
+  width: auto;  /* Maintain aspect ratio */
+  vertical-align: middle; /* Align the image vertically center */
+}
+
+/*--------------------------------------------1s and 0s ANIMATION --------------------------------------------------*/
+
+  /* Styling for the animation container */
+.animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Allows click events to pass through */
+  z-index: 0; /* Appear beneath actual content */
+}
+
+/* Base styling for each animated element */
+.falling-binary {
+  position: absolute;
+  font-size: 1em;
+  color: #15a835; /* Classic green color */
+  opacity: 0.8;
+  white-space: nowrap;
+  /*---Increase the duration range to slow down the animation -- */
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+
+/* Add animation */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.falling-binary {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 5s;
+}
+
+/* ---------------------------------------------  Main ------------------------*/
+main {
+    padding: 60px;
+}
+
+/* Fixed bottom navigation ------------------------------------------------------------*/
+nav#bottom-nav {
+    background-color: #333;
+    color: white;
+    position: bottom;  /* Fixes the position */
+    bottom: 0px;  /* Pushes it up by 50px to make room for the footer */
+    left: 5px;  /* Aligns the navigation to the left */
+    width: 100%;  /* Makes sure the navigation spans the entire width of the page */
+    z-index: 999;  /* Optional: sets it just below the footer */
+}
+
+
+
+/* Footer Container */
+footer {
+    background-color:  #65a1fa;
+    text-align: center;
+    padding: none;
+    width: 100%;
+    position: relative;  /* Relative positioning */
+  }
+ /* bottom  Navigation Bar ---------------------------------------------------------------*/ 
+
+ 
+  /* Style for the bottom navigation */
+  nav#bottom-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #65a1fa;
+    height: 3em;
+    color: white;
+    padding: none;
+  }
+  
+  nav#bottom-nav ul {
+    list-style-type: none;
+    padding: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav#bottom-nav li {
+    margin: 5px;
+  }
+  
+  nav#bottom-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  nav#bottom-nav li a:hover {
+    background-color: #2daaf3;
 }
 
