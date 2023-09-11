@@ -798,7 +798,7 @@ footer {
     #socialnavfooter {
         flex-direction: row; /* Keeps it in a row but you can change it to column if you like */
         justify-content: space-between;
-        max-width: 95%; /* You can adjust this */
+        max-width: 100%; /* You can adjust this */
       }
     
 
@@ -832,6 +832,44 @@ footer {
   vertical-align: middle; /* Align the image vertically center */
 }
 
+/*--------------------------------------------1s and 0s ANIMATION --------------------------------------------------*/
 
+  /* Styling for the animation container */
+.animation-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; /* Allows click events to pass through */
+  z-index: 0; /* Appear beneath actual content */
+}
+
+/* Base styling for each animated element */
+.falling-binary {
+  position: absolute;
+  font-size: 1em;
+  color: #3f9dea; /* Classic green color */
+  opacity: 0.8;
+  white-space: nowrap;
+  /*---Increase the duration range to slow down the animation -- */
+  animation-name: fall;
+  animation-timing-function: linear;
+}
+
+
+/* Add animation */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.falling-binary {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 5s;
+}
 
 
