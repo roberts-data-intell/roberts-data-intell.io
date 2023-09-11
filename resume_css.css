@@ -872,4 +872,65 @@ footer {
   animation-iteration-count: 5s;
 }
 
+/* ---------------------------------------------  Main ------------------------*/
+main {
+    padding: 00px;
+}
+
+/* Fixed bottom navigation ------------------------------------------------------------*/
+nav#bottom-nav {
+    background-color: #333;
+    color: white;
+    position: bottom;  /* Fixes the position */
+    bottom: 0px;  /* Pushes it up by 50px to make room for the footer */
+    left: 5px;  /* Aligns the navigation to the left */
+    width: 100%;  /* Makes sure the navigation spans the entire width of the page */
+    z-index: 999;  /* Optional: sets it just below the footer */
+}
+
+
+
+/* Footer Container */
+footer {
+    background-color:  #65a1fa;
+    text-align: center;
+    padding: 0em;
+    width: 100%;
+    position: relative;  /* Relative positioning */
+  }
+ /* bottom  Navigation Bar ---------------------------------------------------------------*/ 
+
+ 
+  /* Style for the bottom navigation */
+  nav#bottom-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #65a1fa;
+    height: 3em;
+    color: white;
+    padding: 0em;
+  }
+  
+  nav#bottom-nav ul {
+    list-style-type: none;
+    padding: 3px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav#bottom-nav li {
+    margin: 5px;
+  }
+  
+  nav#bottom-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+  }
+
+  nav#bottom-nav li a:hover {
+    background-color: #2daaf3;
+}
+}
 
