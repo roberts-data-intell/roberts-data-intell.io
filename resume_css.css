@@ -1,7 +1,8 @@
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 801px) {
 
   body {
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
   }
   
 /* -------------------------- rdi_logo.png  -------------------------*/
@@ -24,6 +25,7 @@
   
   .topnav #myLinks {
     display: flex;
+    z-index: 1000;
   }
   
   .topnav a {
@@ -46,7 +48,8 @@
   .topnav a:hover {
     color: rgb(252, 249, 249);
     text-shadow: white;
-    background-color: #1e70eb;  
+    background-color: #1e70eb;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  
   }
   
   .active {
@@ -73,6 +76,45 @@ header {
 }
 
 
+/* ------------------------------------ moving word animation ------------------------------------ */
+
+@keyframes moveText {
+  0%, 10% {
+    transform: translateX(150%);
+  }
+  30% {
+    transform: translateX(155%);
+  }
+  40% {
+    transform: translateX(30%);
+  }
+  60% {
+    transform: translateX(50%);
+  }
+  70% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Base styles for the moving text */
+.movingText {
+  animation: moveText 20s linear; /* Removed "infinite" */
+  white-space: nowrap; 
+  overflow: hidden; 
+  position: relative; 
+  font-size: 24px; 
+  color: #366ee6; 
+  background-color: #fff;
+  padding: 5px 10px;
+  
+  /* This will hide the text initially but will be made visible by the JavaScript */
+  visibility: hidden;
+}
+
+
 
 
 
@@ -96,13 +138,14 @@ header {
 h3 {
   font-size: 1rem;
   position: sticky;
-  color:#000000;
+  color:#02070a;
   /* Added for centering */
   text-align: center;  /* Horizontally center */
   display: flex;       /* Prepare for vertical alignment */
   align-items: center; /* Vertically center */
   justify-content: center; /* Also helps in horizontally centering */
   padding-top: 0.75em;
+  text-shadow: #000000;
 }
 
 /* ------------------------------------------------------  H4 --------------------*/
@@ -123,7 +166,7 @@ h5 {
   font-size: 1.5rem;
   float: center;
   text-shadow: 2px 2px 4px #366ee6;
-color: #faf6f6;
+color: #60cef0;
 }
 
 /* ------------------------------------------------------  H6 --------------------*/
@@ -134,72 +177,22 @@ h6 {
 color: #0a0a0a;
 }
 
-.brand-title_email {
-  font-size: 1.5rem;
-  float: center;
-  text-shadow: 2px 2px 4px #efebeb;
-color: #ece7e7;
-
-}
-
-.brand-title {
-  font-size: 2.5rem;
-
-  text-shadow: 2px 2px 4px #efebeb;
-color:rgb(243, 237, 237);
-animation: blink 2s infinite;
--webkit-animation: blink 10s infinite;
-z-index: 999;
-}
-
-
-
-@keyframes blink {
-  78% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  79%{
-     color: #f77fc9;
-  }
-  80% {
-    
-    text-shadow: whitesmoke;
-  }
-  81% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  82% {
-    color: #d45392;
-    text-shadow: none;
-  }
-  83% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-  92% {
-    color: #e4f037;
-    text-shadow: none;
-  }
-  92.5% {
-    color: inherit;
-    text-shadow: inherit;
-  }
-}
-
-.brand-title :hover {
-  font-size: 2.5rem;
- 
-  text-decoration: none;
-}
 
 
 
 /*  ---------------------------------------------- MAIN  -----------------------------------                              */
 
 main {
-    padding: 20px;
+    padding: 1px;
+    background-image: url('img/vault.png');
+    background-size: cover; 
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 246, 246, 0.75);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Existing footer styles with fixed position */
@@ -207,11 +200,11 @@ footer {
     background-color: #f4f4f4;
     text-align: center;
     padding: 0em;
-    position: fixed; /* Fixes the position */
+    position: absolute; /* Fixes the position at bttm*/
     bottom: 0;  /* Aligns the footer to the bottom */
     left: 0;  /* Aligns the footer to the left */
     width: 100%;  /* Makes sure the footer spans the entire width of the page */
-    z-index: 1000;  /* Optional: ensure the footer is above other elements */
+      /* Optional: ensure the footer is above other elements */
 }
 
 
@@ -228,14 +221,7 @@ nav#bottom-nav {
 
 
 
-/* Footer Container */
-footer {
-    background-color:  #65a1fa;
-    text-align: center;
-    padding: 0em;
-    width: 100%;
-    position: relative;  /* Relative positioning */
-  }
+
  /* bottom  Navigation Bar ---------------------------------------------------------------*/ 
 
  
@@ -269,6 +255,7 @@ footer {
 
   nav#bottom-nav li a:hover {
     background-color: #2daaf3;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
   
 
@@ -279,10 +266,10 @@ footer {
  .outer-div,
  .inner-div {
    height: card-height;
-   max-width: card-width;
+   width: 75%;
    margin: 0 auto;
    position: relative;
-   
+   z-index: 1;
  }
  
  .outer-div {
@@ -299,6 +286,7 @@ footer {
    text-align: center;
    transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
    transform-style: preserve-3d;
+   text-shadow: whitesmoke;
  }
  
  
@@ -376,18 +364,76 @@ footer {
 }
 .email-button:hover {
   background-color: #45a049;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
 
-/* ---------------------------------------------------------------------------  PDF Embed Styling */
+/* ---------------------------------------------------------------------------  Skills cover letter jump */
 #pdf-embed {
     width: 100%; /* Sets width to 100% of the parent container */
     height: 800px; /* You can adjust this height based on your needs */
     
 }
 
-/* Fancy download button */
+/* ---------------------------------------   Skills button */
+.skills-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  left: 25%;
+  background-color: #4CAF50;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* Hover state for download button */
+.skills-button:hover {
+  background-color: #45a049;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.firework-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.skills-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+
+
+
+
+/* ------------------------------------------      Fancy download button   ------------------------------- */
 .download-button {
     display: inline-block;
     margin-top: 20px;
@@ -399,11 +445,33 @@ footer {
     font-size: 16px;
     cursor: pointer;  /* Pointer/hand icon */
     text-decoration: none;  /* Removes underline */
-}
+
+    animation: shake 0.5s;
+
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
 
 /* Hover state for download button */
 .download-button:hover {
     background-color: #45a049;  /* Darker green */
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    animation-play-state: paused;
 }
 
 /* ----------------------------------------------------------------   Contact Form Styling */
@@ -559,23 +627,26 @@ footer {
  }
  
  .indeed:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   border-radius: 35%;
  }
  
  .linkedin:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
   border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
  }
  
  .facebook:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
   border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
  }
  
  .gmail:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
  }
  
    /*------------------------------------------------------------------Footer navigation--------------------------------------------------*/
@@ -614,6 +685,7 @@ footer {
     color: rgb(13, 9, 9);
     text-decoration: none;
     border-radius: 250%, 25%, 25%, 25%;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
    }
    
    .footer-link .active {
@@ -652,6 +724,7 @@ footer {
   /*---Increase the duration range to slow down the animation -- */
   animation-name: fall;
   animation-timing-function: linear;
+  
 }
 
 
@@ -677,10 +750,12 @@ footer {
   margin-top: 100px;
 }
 
+
 /* Fire effect */
 .fire-effect {
   animation: fire 3s linear forwards;
 }
+
 
 @keyframes fire {
   0% {
@@ -698,6 +773,7 @@ footer {
   animation: smoke 4s linear forwards;
 }
 
+
 @keyframes smoke {
   0% {
     color: red;
@@ -708,9 +784,41 @@ footer {
   }
 }
 
+/* ------------------------------------------------------   Floating Box top logo */
+
+/* Position the logo above the navigation bar 
+.floating-box-top-logo {
+  position: absolute; /* Use absolute positioning to place it above the navigation
+  top: 10px; 
+  left: -225px; 
+  border: none; 
+  padding: 0; 
+  z-index: 0; 
+  box-shadow: none; 
+  border-radius: 0; 
+  display: inline;  Change to inline to align with other elements 
+}*/
+
+/* Resize the logo by 75% using the transform property
+.logo1 {
+  display: inline-block;
+  margin-right: 10px; 
+  transform: scale(0.45); 
+  transition: transform 0.3s ease; 
+} --*/
+
+/* Slogan Styles (unchanged) 
+.slogan1 {
+  display: inline-block;
+  vertical-align: middle;
+}   --*/
 
 
-    
+
+
+
+
+ /*---------------------------------------------------------------  MOBILE -------------------------------------*/   
 
 /*----------------------------------------------------800 below ------- Phone--------------------------------- */
 /*----  MOBILE -----------------*/
@@ -726,7 +834,7 @@ footer {
     h3 {
       font-size: .75em;
       position: sticky;
-      color:#000000;
+      color:#17c7f3;
       /* Added for centering */
       text-align: center;  /* Horizontally center */
       display: flex;       /* Prepare for vertical alignment */
@@ -902,7 +1010,7 @@ footer {
     text-align: center;
     padding: none;
     width: 100%;
-    position: relative;  /* Relative positioning */
+    position: bottom;  /* Relative positioning */
   }
  /* bottom  Navigation Bar ---------------------------------------------------------------*/ 
 
@@ -939,6 +1047,102 @@ footer {
     background-color: #2daaf3;
 }
 
+
+
+/*--------------------Content Card Contact2-------------------------*/
+ 
+.outer-div,
+.inner-div {
+  height: card-height;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.outer-div {
+  perspective: 900px;
+  perspective-origin: 50% calc(50% - 18em);
+}
+
+.inner-div {
+  margin: 0 auto;
+
+  font-weight: 400;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  transform-style: preserve-3d;
+  text-shadow: whitesmoke;
+}
+
+
+
+.front
+ {
+  position: relative;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  cursor: pointer;
+  height: 100%;
+  background: white;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.front__bkg-photo {
+  position: relative;
+  height: 200px;
+  width: card-width;
+  background: url("img/cardback.jpg")
+    no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+}
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: #89cbf2;
+  }
+
+
+.front__face-photo {
+  position: relative;
+  top: -5px;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: url("img/profilepic.png")
+  no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  
+}
+
+.front__text {
+ background: #89cbf2;
+}
+
+
+
+
 /*-------------------------------------------------------500-- Phone--------------------------------- */
 /*----  MOBILE -----------------*/
 
@@ -953,7 +1157,7 @@ footer {
     h3 {
       font-size: .75em;
       position: sticky;
-      color:#000000;
+      color:#080808;
       /* Added for centering */
       text-align: center;  /* Horizontally center */
       display: flex;       /* Prepare for vertical alignment */
@@ -962,7 +1166,7 @@ footer {
       padding-top: 0.75em;
     }
     
-/*-------------------------     H4  mobile -----------------------------             --*/
+/*-------------------------     H4  mobile -------------------------------*/
     h4 {
       font-size: 1.0rem;
       position: sticky;
@@ -983,6 +1187,7 @@ footer {
       color: white;
       border-radius: 10px;
       padding: 20px; /* Add 20 pixels of padding inside the container */
+      z-index: 1000;
   }
     
     .topnav {
@@ -1160,4 +1365,107 @@ footer {
   nav#bottom-nav li a:hover {
     background-color: #2daaf3;
 }
+
+
+
+/*--------------------Content Card Contact2-------------------------*/
+ 
+.outer-div,
+.inner-div {
+  height: card-height;
+  width: 75%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.outer-div {
+  perspective: 900px;
+  perspective-origin: 50% calc(50% - 18em);
+}
+
+.inner-div {
+  margin: 0 auto;
+
+  font-weight: 400;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  transform-style: preserve-3d;
+  text-shadow: whitesmoke;
+}
+
+
+
+.front
+ {
+  position: relative;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.front {
+  cursor: pointer;
+  height: 100%;
+  background: white;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.front__bkg-photo {
+  position: relative;
+  height: 200px;
+  width: card-width;
+  background: url("img/cardback.jpg")
+    no-repeat;
+  background-size: cover;
+  backface-visibility: hidden;
+  overflow: hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+}
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: #89cbf2;
+  }
+
+
+.front__face-photo {
+  position: relative;
+  top: -5px;
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: url("img/profilepic.png")
+  no-repeat;
+  background-size: contain;
+  overflow: hidden;
+  
+}
+
+.front__text {
+ background: #89cbf2;
+}
+
+
+
+
+
+
+
+
+
+
 
