@@ -76,6 +76,44 @@ header {
 }
 
 
+/* ------------------------------------ moving word animation ------------------------------------ */
+
+@keyframes moveText {
+  0%, 10% {
+    transform: translateX(150%);
+  }
+  30% {
+    transform: translateX(155%);
+  }
+  40% {
+    transform: translateX(30%);
+  }
+  60% {
+    transform: translateX(50%);
+  }
+  70% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Base styles for the moving text */
+.movingText {
+  animation: moveText 20s linear; /* Removed "infinite" */
+  white-space: nowrap; 
+  overflow: hidden; 
+  position: relative; 
+  font-size: 24px; 
+  color: #366ee6; 
+  background-color: #fff;
+  padding: 5px 10px;
+  
+  /* This will hide the text initially but will be made visible by the JavaScript */
+  visibility: hidden;
+}
+
 
 
 
@@ -249,28 +287,39 @@ nav#bottom-nav {
    transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
    transform-style: preserve-3d;
    text-shadow: whitesmoke;
- }
  
+   animation: spinAnimation 2.5s ease-out forwards;
+  }
  
- 
- .front
-  {
-   position: relative;
-   top: 0;
-   left: 0;
-   backface-visibility: hidden;
- }
+ .animate-slide {
+  transform: rotateY(0deg);  /* Flips to its natural position */
+}
+
+@keyframes spinAnimation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(3600deg); /* 360 degrees * 10 */
+  }
+}
+
  
  .front {
-   cursor: pointer;
-   height: 100%;
-   background: white;
-   backface-visibility: hidden;
-   border-radius: 5px;
-   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
-     0 0 40px rgba(0, 0, 0, 0.1) inset;
- }
- 
+  position: relative;
+  top: 0;
+  left: -100%; /* Start the div off-screen (left) */
+  cursor: pointer;
+  height: 100%;
+  background: white;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  transition: left 1s;  /* This gives the animation effect */
+}
+
+
  .front__bkg-photo {
    position: relative;
    height: 200px;
