@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Colin Roberts Portfolio</title>
+    <title>Contact- Roberts Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Roberts Portfolio</title>
+    <title>Contact - Roberts Portfolio</title>
     <link rel="stylesheet" href="resume_css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="x-icon" href="img/favicon.ico">
@@ -12,27 +12,30 @@
 <body>
     
   <header>
-
+    <div class="animation-container"></div>
+    
     <!-- Top Navigation Menu -->
-    <div class="topnav">
-
-
-
-
-      <!-- Replaced text with img tag -->
-      <a href="index.html" class="active"><iconify-icon icon="simple-icons:powerbi"></iconify-icon><iconify-icon icon="icon-park-outline:data"></iconify-icon><iconify-icon icon="streamline:money-bank-institution-money-saving-bank-payment-finance"></iconify-icon><iconify-icon icon="mdi:finance"></iconify-icon>Roberts Data Portfolio</a>
-      <div id="myLinks">
-        <a href="index.html">Cover Letter</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-        <a href="Skills.html">Business Intelligence Dashboards</a>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html" class="active"><iconify-icon icon="mdi:finance"></iconify-icon>
+        Roberts Portfolio</a>
+      <a href="index.html">Cover Letter</a>
+      <a href="resume.html">Resume</a>
+      <a href="Contact.html">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">Business Intelligence Dashboards
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="Skills.html">Power B I</a>
+            <a href="dev_ops.html">Dev Ops</a>
+            <a href="visuals2.html">Skills Stats</a>
+        </div>
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
 </header>
-
+    
+ <main>
     <h4><span id="fireText">__________ Contact Page __________</span></h4>
     </div>
 
@@ -43,7 +46,7 @@
   
 
 
-    <main>
+   
       
         <div class="outer-div">
             <div class="inner-div">
@@ -72,41 +75,63 @@
             <div class="front__text">
               
               <a href="mailto:colinroberts.contact@gmail.com" class="email-button">Email Me</a>
-            <h3>Contact Me For More Information</h3>
+            <h3>ColinRoberts.Contact@gmail.com</h3>
             
 </div>
 
 
     </main>
+
+<!-- Button to toggle the chatbot -->
+<button class="chatbot-button" onclick="toggleChatbot()">Chat with Colin</button>
     
-    <footer>
-        <!-- Bottom Navigation Bar -->
-        <nav id="bottom-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Skills.html">Dashboards</a></li>
-            </ul>
-        </nav>
-        <br>
-        <section id="footer">
-            <div class="container text-center">
-                <a href="https://my.indeed.com/p/colinr-zzg9wzr" class="indeed"></a>
-                <a href="https://www.linkedin.com/in/colin-roberts-996354165/" class="linkedin"></a>
-                <a href="https://www.facebook.com/colin.roberts.9028" class="facebook"></a>
-                <a href="mailto:colinroberts.contact@gmail.com" class="gmail"></a>
-          </ul>
-        </section> 
-            <p>Copyright &copy; 2023 Roberts Data Intell</p>
-        </footer>
+<!-- Chatbot container -->
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header" id="chatbotHeader">
+        Chat with Colin
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+        <!-- Messages will be displayed here -->
+    </div>
+    <div class="chatbot-input">
+        <input type="text" placeholder="Type your message..." id="userInput">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
 
-
+<footer>
+    <!-- Bottom Navigation Bar -->
+    <nav id="bottom-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Skills.html">Dashboards</a></li>
+        </ul>
+    </nav>
+    <br>
+    <section id="footer">
+        <div class="container text-center">
+            <a href="https://my.indeed.com/p/colinr-zzg9wzr" class="indeed"></a>
+            <a href="https://www.linkedin.com/in/colin-roberts-996354165/" class="linkedin"></a>
+            <a href="https://www.facebook.com/colin.roberts.9028" class="facebook"></a>
+            <a href="https://github.com/roberts-data-intell" class="github"></a>
+            <a href="mailto:colinroberts.contact@gmail.com" class="gmail"></a>
+      </ul>
+    </section> 
+        <p>Copyright &copy; 2023 Roberts Data Intell</p>
+      </footer>
+        <script src="js/doublemenu.js"></script>
+        <script src="js/carousel.js"></script>
         <script src="js/animate-slide.js"></script>
         <script src="js/1s_and_0s.js"></script>           
         <script src="js/fire.js"></script>
-        <script src="js/mobilenavbttn.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script src="js/logo.js"></script>
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <div class="sticky-logo" data-tooltip="This is the tooltip message!">
+            <img src="img/rdi_logo2.png" alt="Logo">
+        </div>
     </body> 
     </html>
 
