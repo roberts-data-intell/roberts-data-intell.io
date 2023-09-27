@@ -1,0 +1,102 @@
+embedPowerBI.js directions
+
+Embedding a Power BI report into an HTML page requires a few steps. Here's a basic outline and the code to help you embed a Power BI report:
+
+Get your Power BI Embed Token:
+
+To embed reports, you need an 'embed token'. This can be generated using Power BI REST APIs. Generally, you would have a backend service that requests this token from Power BI and provides it to your front-end. For the sake of this example, let's assume you've already obtained this token.
+Get the report's embed URL:
+
+You can find this in the Power BI Service. When you are looking at the report, the URL will be in your address bar.
+Embed using Power BI JavaScript library:
+
+You'll need to include the Power BI JavaScript library in your HTML to use its embedding functionality.
+
+=========================================================
+
+To get an embed token for a Power BI report, you'll need to use the Power BI REST API. Embed tokens are often used to securely embed reports in applications for external users without them requiring a Power BI Pro license. The process involves several steps:
+
+1. **Register an Azure AD Application**:
+    - Go to the [Azure Portal](https://portal.azure.com/).
+    - Navigate to "Azure Active Directory" > "App registrations" > "New registration".
+    - Fill out the required fields.
+    - Under "Redirect URI", you can select "Web" and enter `http://localhost` for testing purposes.
+    - After registering, note down the `Application (client) ID` and the `Directory (tenant) ID`.
+
+2. **Grant the required API permissions to your Azure AD application**:
+    - While still in your application's page in the Azure Portal, go to "API permissions" > "Add a permission" > "APIs my organization uses" and search for "Power BI Service".
+    - Add the `Dataset.ReadWrite.All` permission.
+
+3. **Generate an Application Secret**:
+    - Go to "Certificates & secrets" > "New client secret".
+    - Note down the secret value; you'll use this later to authenticate.
+
+4. **Get an access token for your Azure AD Application**:
+
+Here's a sample code using Node.js and the `axios` library to get the access token:
+
+First, install the necessary npm packages if you haven't already:
+Copy code
+-------------------------------------
+npm install axios querystring
+--------------------------------------------
+-
+
+
+====================================================
+This is a single Node.js script that performs the following steps:
+
+Obtains an access token using your Azure AD application credentials.
+Uses that access token to get the Power BI embed token for your report.
+You can run this script in a Node.js environment. Remember to replace 
+placeholders (YOUR_TENANT_ID, YOUR_CLIENT_ID, YOUR_CLIENT_SECRET, and YOUR_REPORT_ID) 
+with the appropriate values from your Azure AD application and Power BI workspace.
+
+
+js 
+-----------------------------------------------------------------
+const axios = require('axios');
+const qs = require('querystring');
+
+// Azure AD Application and Power BI details
+const tenantId = "YOUR_TENANT_ID";
+const clientId = "YOUR_CLIENT_ID";
+const clientSecret = "YOUR_CLIENT_SECRET";
+const reportId = "YOUR_REPORT_ID";
+
+// Get the access token from Azure AD
+const postData = {
+    grant_type: 'client_credentials',
+    client_id: clientId,
+    client_secret: clientSecret,
+    scope: 'https://analysis.windows.net/powerbi/api/.default'
+};
+
+axios.post(`https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`, qs.stringify(postData))
+    .then(response => {
+        const accessToken = response.data.access_token;
+        console.log("Access Token:", accessToken);
+
+        // Use the access token to get the embed token for your report
+        const apiUrl = `https://api.powerbi.com/v1.0/myorg/reports/${reportId}/GenerateToken`;
+        
+        return axios.post(apiUrl, 
+            {
+                accessLevel: "View"
+            },
+            {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`,
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    })
+    .then(response => {
+        const embedToken = response.data.token;
+        console.log("Embed Token:", embedToken);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+---------------------------------------

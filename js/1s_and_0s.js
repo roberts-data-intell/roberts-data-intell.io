@@ -16,7 +16,7 @@ function createFallingBinary() {
   
   // Generate six times the amount of 1's and 0's by calling the function 6 times
   function generateMultipleBinaries() {
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 25; i++) {
       createFallingBinary();
     }
   }
