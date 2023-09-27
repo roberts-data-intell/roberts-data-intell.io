@@ -1,63 +1,104 @@
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 2000px) {
 
   body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+     /* Adjust based on the height of your .topnav */
   }
   
-/* -------------------------- rdi_logo.png  -------------------------*/
 
-#logo {
-  height: 200px; /* Or any size that you prefer */
-  width: auto;  /* Maintain aspect ratio */
-  vertical-align: middle; /* Align the image vertically center */
+ /* -------------------------- Top Nav -------------------------*/ 
+ /* Add a black background color to the top navigation */
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #48a2c5;
+  overflow: hidden;
+   
 }
 
- /* -------------------------- Top Nav   -------------------------*/ 
-  .topnav {
-    overflow: hidden;
-    background-color: #81daf5;
-    position: fixed;  /* Changed from static to fixed */
-    top: 0;  /* Stick it to the top */
-    width: 100%;  /* Full width */
-    z-index: 100;  /* Ensure it stays on top of other elements */
-  }
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #48a2c5;
+  font-size: 20px;
+}
+
+/* Add an active class to highlight the current page */
+.active {
+  background-color: #38ecec;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+  font-size: 20px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(250, 239, 177);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  background-color: rgb(250, 239, 177);
+
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #030505;
+  color: rgb(56, 169, 221);
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+ 
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
   
-  .topnav #myLinks {
-    display: flex;
-    z-index: 1000;
-  }
-  
-  .topnav a {
-    color: rgb(7, 7, 7);
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-    background-color: #81daf5; 
-  }
-  
-  .topnav a.icon {
-    background: black;
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  .topnav a:hover {
-    color: rgb(252, 249, 249);
-    text-shadow: white;
-    background-color: #1e70eb;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  
-  }
-  
-  .active {
-    background-image: #81daf5;
-    height: auto;
-    color: white;
-  }
-  }
+}
+
+
 
 
 /* -----------------------------------------------   Body and Header   -------------------- - */
@@ -76,43 +117,8 @@ header {
 }
 
 
-/* ------------------------------------ moving word animation ------------------------------------ */
 
-@keyframes moveText {
-  0%, 10% {
-    transform: translateX(150%);
-  }
-  30% {
-    transform: translateX(155%);
-  }
-  40% {
-    transform: translateX(30%);
-  }
-  60% {
-    transform: translateX(50%);
-  }
-  70% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
-/* Base styles for the moving text */
-.movingText {
-  animation: moveText 20s linear; /* Removed "infinite" */
-  white-space: nowrap; 
-  overflow: hidden; 
-  position: relative; 
-  font-size: 24px; 
-  color: #366ee6; 
-  background-color: #fff;
-  padding: 5px 10px;
-  
-  /* This will hide the text initially but will be made visible by the JavaScript */
-  visibility: hidden;
-}
 
 
 
@@ -189,23 +195,14 @@ main {
     background-position: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(249, 246, 246, 0.75);
+    background-color: #6bc9f5;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    
+    z-index: 0;
 }
 
-/* Existing footer styles with fixed position */
-footer {
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 0em;
-    position: absolute; /* Fixes the position at bttm*/
-    bottom: 0;  /* Aligns the footer to the bottom */
-    left: 0;  /* Aligns the footer to the left */
-    width: 100%;  /* Makes sure the footer spans the entire width of the page */
-      /* Optional: ensure the footer is above other elements */
-}
+
 
 
 /* Fixed bottom navigation ------------------------------------------------------------*/
@@ -217,6 +214,7 @@ nav#bottom-nav {
     left: 0;  /* Aligns the navigation to the left */
     width: 100%;  /* Makes sure the navigation spans the entire width of the page */
     z-index: 999;  /* Optional: sets it just below the footer */
+    font-family: Georgia, Times, 'Times New Roman', serif bold;
 }
 
 
@@ -229,10 +227,11 @@ nav#bottom-nav {
   nav#bottom-nav {
     display: flex;
     justify-content: center;
-    background-color: #65a1fa;
+    background-color: #6bc9f5;
     height: 3em;
     color: white;
     padding: 1em;
+    border-radius: 20px;
   }
   
   nav#bottom-nav ul {
@@ -241,22 +240,28 @@ nav#bottom-nav {
     margin: 0;
     display: flex;
     justify-content: center;
+    font-family: Georgia, Times, 'Times New Roman', serif bold;
   }
   
   nav#bottom-nav li {
     margin: 0 15px;
+    font-family: Georgia, Times, 'Times New Roman', serif bold;
   }
   
   nav#bottom-nav li a {
     color: white;
     text-decoration: none;
     padding: 10px;
+    font-family: Georgia, Times, 'Times New Roman', serif bold;
+    font-size: 20px;
   }
 
   nav#bottom-nav li a:hover {
     background-color: #2daaf3;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+    font-family:  Georgia, Times, 'Times New Roman', serif bold;
+    border-radius: 20px;
+  }
   
 
 
@@ -265,31 +270,32 @@ nav#bottom-nav {
  
  .outer-div,
  .inner-div {
-   height: card-height;
+   height: auto;
    width: 75%;
    margin: 0 auto;
    position: relative;
-   z-index: 1;
+   z-index: 0;
  }
  
  .outer-div {
-   perspective: 900px;
-   perspective-origin: 50% calc(50% - 18em);
+  perspective: 900px;
+  perspective-origin: 50% calc(50% - 18em);
+}
+
+.inner-div {
+  margin: 0 auto;
+
+  font-weight: 400;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
+  transform-style: preserve-3d;
+  text-shadow: whitesmoke;
+  font-family: Georgia, Times, 'Times New Roman', serif bold;
+
+  animation: spinAnimation 2.5s ease-out forwards;
  }
- 
- .inner-div {
-   margin: 0 auto;
- 
-   font-weight: 400;
-   color: black;
-   font-size: 1rem;
-   text-align: center;
-   transition: all 0.6s cubic-bezier(0.8, -0.4, 0.2, 1.7);
-   transform-style: preserve-3d;
-   text-shadow: whitesmoke;
- 
-   animation: spinAnimation 2.5s ease-out forwards;
-  }
  
  .animate-slide {
   transform: rotateY(0deg);  /* Flips to its natural position */
@@ -308,7 +314,7 @@ nav#bottom-nav {
  .front {
   position: relative;
   top: 0;
-  left: -100%; /* Start the div off-screen (left) */
+   /* Start the div off-screen (left) */
   cursor: pointer;
   height: 100%;
   background: white;
@@ -367,14 +373,15 @@ nav#bottom-nav {
 .email-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4ee0fa;
   color: white;
   text-decoration: none;
   border-radius: 5px;
   font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
 }
 .email-button:hover {
-  background-color: #45a049;
+  background-color: #98ddee;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -390,20 +397,22 @@ nav#bottom-nav {
 /* ---------------------------------------   Skills button */
 .skills-button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  left: 25%;
-  background-color: #4CAF50;  /* Green background */
+  position: float;
+  margin: 35px;
+  padding: 15px 30px  10px 10px;
+  left: 25px;
+  background-color: #47d5ee;  /* Green background */
   color: white;  /* White text */
-  border: none;
-  border-radius: 5px;  /* Rounded corners */
+  border:#080808 3px;
+  border-radius: 25px;  /* Rounded corners */
   font-size: 16px;
   text-align: center;
   cursor: pointer;  /* Pointer/hand icon */
   text-decoration: none;  /* Removes underline */
-
+  width: 150px;
+  height: 60px;
   animation: shake 0.5s;
-
+  font-family: Georgia, Times, 'Times New Roman', serif bold;
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
@@ -425,7 +434,7 @@ nav#bottom-nav {
 
 /* Hover state for download button */
 .skills-button:hover {
-  background-color: #45a049;  /* Darker green */
+  background-color: #2095e2;  /* Darker green */
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   animation-play-state: paused;
 }
@@ -449,11 +458,12 @@ nav#bottom-nav {
     display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
-    background-color: #4CAF50;  /* Green background */
+    background-color: #2095e2;  /* Green background */
     color: white;  /* White text */
     border: none;
     border-radius: 5px;  /* Rounded corners */
     font-size: 16px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
     cursor: pointer;  /* Pointer/hand icon */
     text-decoration: none;  /* Removes underline */
 
@@ -480,7 +490,7 @@ nav#bottom-nav {
 
 /* Hover state for download button */
 .download-button:hover {
-    background-color: #45a049;  /* Darker green */
+    background-color: #69b2e2;  /* Darker green */
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     animation-play-state: paused;
 }
@@ -501,11 +511,12 @@ nav#bottom-nav {
   margin-top: 15px;
   padding: 10px;
   font-size: 16px;
+
 }
 
 /* Fancy Submit Button */
 .submit-button {
-  background-color: #4CAF50;  /* Green background */
+  background-color: #2095e2;  /* Green background */
   color: white;  /* White text */
   border: none;
   cursor: pointer;  /* Pointer/hand icon */
@@ -513,46 +524,60 @@ nav#bottom-nav {
 }
 
 .submit-button:hover {
-  background-color: #45a049;  /* Darker green */
+  background-color: #84c6f1;  /* Darker green */
 }
 
 
+/*--Use Arrows --*/
+.iconify {
+  font-size: 24px;
+  vertical-align: middle; /* To align the icon with the text */
+}
+
+
+/* ---------------------   Slide show ---------*/
 /* ------------------------------------  slideshow w3schools  ------------------------------------------------------------ */
 * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 700px;
+  width: 75%;               /* Full width to make it responsive */
   position: relative;
   margin: auto;
+  overflow: hidden;          /* To prevent any possible overflow */
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+  width: 100%;               /* Ensure slides are full-width */
 }
 
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  top: 70%;
+  width: 40px;               /* Fixed width */
+  height: 40px;              /* Fixed height */
+  margin-top: -20px;         /* Half of height */
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;           /* Reduced font size for mobile */
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  border-radius: 50%;        /* Circular buttons */
   background-color: #366ee6;
+  line-height: 40px;         /* Align text to center of button */
+  text-align: center;        /* Center the arrow symbols */
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  right: 5px;                /* Give a little margin from the right */
+}
+
+.prev {
+  left: 5px;                 /* Give a little margin from the left */
 }
 
 /* On hover, add a black background color with a little bit see-through */
@@ -562,23 +587,22 @@ nav#bottom-nav {
 
 /* Caption text */
 .text {
-  color: #070101;              /* Text color */
-  font-size: 15px;              /* Font size */
-  padding: 8px 12px;            /* Padding around the text */
-  position: absolute;           /* Absolute positioning */
-  bottom: 8px;                  /* Position from the bottom */
-  width: 100%;                  /* Full width */
-  text-align: center;           /* Center-aligned text */
-  text-shadow: #2B86C5;         /* Text shadow color */
-  background-color: #89CFF0;    /* Baby blue background color */
+  color: #070101;
+  font-size: 13px;              /* Reduced font size for mobile */
+  padding: 6px 10px;            /* Reduced padding */
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 2px #2B86C5;  /* Adjusted text shadow */
+  background-color: rgba(137, 207, 240, 0.7); /* Make background a bit transparent */
 }
-
 
 /* Number text (1/20 etc) */
 .numbertext {
   color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
+  font-size: 10px;               /* Reduced font size for mobile */
+  padding: 6px 10px;             /* Reduced padding */
   position: absolute;
   top: 0;
 }
@@ -586,8 +610,8 @@ nav#bottom-nav {
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
@@ -599,7 +623,7 @@ nav#bottom-nav {
   background-color: #717171;
 }
 
-/* Fading animation */
+/* Fading animation remains unchanged */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -636,6 +660,12 @@ nav#bottom-nav {
   background-repeat: no-repeat;
   
  }
+
+ #footer .github {
+  content: url('https://api.iconify.design/bi/github.svg');
+  background-repeat: no-repeat;
+  
+ }
  
  .indeed:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -660,8 +690,29 @@ nav#bottom-nav {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
  }
  
+ .github:hover {
+
+  border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
    /*------------------------------------------------------------------Footer navigation--------------------------------------------------*/
-  
+  /* Existing footer styles with fixed position */
+footer {
+  background-color: #60b8f3;
+  text-align: center;
+  padding: 0em;
+  position: relative; /* Fixes the position at bttm*/
+  bottom: 0;  /* Aligns the footer to the bottom */
+  left: 0;  /* Aligns the footer to the left */
+  width: 100%;  /* Makes sure the footer spans the entire width of the page */
+    /* Optional: ensure the footer is above other elements */
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
+}
+
+
+
+
+
    .footer-link ul {
     list-style-type: none;
     margin: 0;
@@ -677,6 +728,7 @@ nav#bottom-nav {
     display: inline;
    text-align: center;
    padding: 2px;
+   
    }
    
    /*---------------------------change for resize of footer nav links---------------*/
@@ -688,6 +740,7 @@ nav#bottom-nav {
     text-decoration: none;
     font-size:30px;
     border-radius: 25%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
    }
    
    .footer-link li a:hover:not(.active) {
@@ -728,8 +781,8 @@ nav#bottom-nav {
 /* Base styling for each animated element */
 .falling-binary {
   position: absolute;
-  font-size: 2em;
-  color: #3f9dea; /* Classic green color */
+  font-size: 1em;
+  color: #098123; /* Classic green color */
   opacity: 0.8;
   white-space: nowrap;
   /*---Increase the duration range to slow down the animation -- */
@@ -759,12 +812,15 @@ nav#bottom-nav {
   font-size: 48px;
   text-align: center;
   margin-top: 100px;
+  z-index: 1;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
 }
 
 
 /* Fire effect */
 .fire-effect {
   animation: fire 3s linear forwards;
+  z-index: 2;
 }
 
 
@@ -793,6 +849,164 @@ nav#bottom-nav {
     color: grey;
     text-shadow: 2px 2px 4px #708090, -2px -2px 4px #708090, 2px -2px 4px #708090, -2px 2px 4px #708090;
   }
+}
+
+/* ---------------------------------------------------------------------------  vizuals2 page */
+/* ---------------------------------------   Skills button */
+.viz-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 15px 30px;
+  left: 25%;
+  background-color: #0a6f94;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  font-family: Georgia, Times, 'Times New Roman', serif bold;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+
+}
+
+
+
+
+/* Hover state for download button */
+.viz-button:hover {
+  background-color: #2095e2;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.viz-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.viz-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+/* -------------------------------    STICKY LOGO    ---------------*/
+/* styles for sticky logo */
+.sticky-logo {
+  position: fixed;
+  bottom: 25%;
+  right: 5%; /* Placed it on the right side */
+  z-index: 9999; /* Ensure it's above all other elements */
+}
+
+.sticky-logo img {
+  width: 200px; /* Or your desired width for desktop screens */
+  height: auto;
+}
+
+/* Tooltip styles hidden by default */
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%; /* Positioned above the logo */
+  left: 50%;
+  transform: translateX(-50%); /* Center the tooltip */
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap; /* Prevent the tooltip text from wrapping */
+}
+
+/* -----------------------------------chatbot ----------------------- */
+/* -----------------------------------chatbot ----------------------- */
+/* -----------------------------------chatbot ----------------------- */
+
+/* Button Styles */
+.chatbot-button {
+  position: fixed;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  bottom: 80px;
+  left: 70px;
+  z-index: 998;
+  border: 2px solid rgb(62, 155, 231);
+  box-shadow: 3px 3px 3px 3px rgba(97, 108, 209, 0.2);
+}
+
+/* Chatbot Container Styles */
+#chatbotContainer {
+  position: fixed;
+  bottom: 150px;
+  left: 10px;
+  width: 30%;
+  height: 425px;
+  background-color: #b6d5f5;
+  box-shadow: 3px 3px 3px 3px rgba(97, 108, 209, 0.2);
+  display: none; /* Initially hidden */
+  color: #262627;
+  border-radius: 5px;
+  background-image: url("img/digital_world.jpg");
+  border: 2px solid rgb(62, 155, 231);
+}
+
+#chatbotHeader {
+  background-color: #b6d5f5;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px 5px 0 0; /* Only top border-radius */
+  color: #262627;
+}
+
+#chatbotMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  height: 300px;
+}
+
+#chatbotMessages a {
+  color: #262627; 
+}
+
+#userInput {
+  padding: 10px;
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+#userInput input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#sendButton {
+  padding: 10px 15px;
+  border: none;
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#sendButton:hover {
+  background-color: #0056b3;
+}
+
+
 }
 
 /* ------------------------------------------------------   Floating Box top logo */
@@ -826,26 +1040,98 @@ nav#bottom-nav {
 
 
 
+/*------------------925----------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
 
 
 
- /*---------------------------------------------------------------  MOBILE -------------------------------------*/   
+/*-----------830------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
 
-/*----------------------------------------------------800 below ------- Phone--------------------------------- */
-/*----  MOBILE -----------------*/
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 975px) {
 
   body {
       font-family: Arial, Helvetica, sans-serif;
-    
+      height: 100%;
+        /* Adjust based on the height of your .topnav */
     }
+  
 
 /*---- h3 mobile -----------------*/
     h3 {
       font-size: .75em;
       position: sticky;
-      color:#17c7f3;
+      color:#080808;
       /* Added for centering */
       text-align: center;  /* Horizontally center */
       display: flex;       /* Prepare for vertical alignment */
@@ -854,7 +1140,7 @@ nav#bottom-nav {
       padding-top: 0.75em;
     }
     
-/*-------------------------     H4  mobile -----------------------------             --*/
+/*-------------------------     H4  mobile -------------------------------*/
     h4 {
       font-size: 1.0rem;
       position: sticky;
@@ -866,58 +1152,63 @@ nav#bottom-nav {
       justify-content: center; /* Also helps in horizontally centering */
       padding-top: 0em;
     }
+   
+
     
-    .mobile-container {
-      max-width: 60%;
-      margin: auto;
-      background-color: #555;
-      height: 500px;
-      color: white;
-      border-radius: 10px;
-      padding: 20px; /* Add 20 pixels of padding inside the container */
+/*------------------------- top nav mobile -------------------------------*/
+.topnav a:not(:first-child), .dropdown .dropbtn {
+  display: none;
+}
+
+   
+.topnav a.icon {
+  float: right;
+  display: block;
+  color:rgb(228, 159, 10);
+  background-color:rgb(7, 8, 8);
+  border-radius: 25%;
+  font-size: 25px;
+  border: 2px rgb(187, 171, 26);
   }
+ 
+
+.topnav.responsive {position: relative;}
+.topnav.responsive a.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 25%;
+  color:rgb(228, 159, 10);
+  background-color: #080808;
+}
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: center;
+}
+
+.topnav.responsive .dropdown {float: none;}
+.topnav.responsive .dropdown-content {position: relative;}
+.topnav.responsive .dropdown .dropbtn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+  
+a.active{
+background-color: #000000;
+font-size: 25px;
+
+}
+
+
+
 
   
-  
-  
-  
-    
-    .topnav {
-      overflow: hidden;
-      background-color: #6bc9f5;
-      position: relative;
-    }
-    
-    .topnav #myLinks {
-      display: none;
-    }
-    
-    .topnav a {
-      color: white;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-      display: block;
-    }
-    
-    .topnav a.icon {
-      background: black;
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    .active {
-      background-color: #18c1f5;
-      color: white;
-    }
-   
+
+
 /* -------------------------------------------------------- social --------------------*/
 
     #socialnavfooter {
@@ -926,6 +1217,67 @@ nav#bottom-nav {
         max-width: 100%; /* You can adjust this */
       }
     
+/*----------------------------------------------------------- footer social---------------------------------------------------*/
+#footer .indeed {
+  content: url('https://api.iconify.design/simple-icons/indeed.svg');
+ 
+  background-repeat: no-repeat;
+  
+  background-repeat: no-repeat;
+  
+ }
+ 
+ #footer .linkedin {
+  content: url('https://api.iconify.design/akar-icons/linkedin-v2-fill.svg');
+  background-repeat: no-repeat;
+  font-size: 15px;
+ }
+ #footer .facebook {
+  content: url('https://api.iconify.design/cib/facebook-f.svg');
+  background-repeat: no-repeat;
+  
+ }
+ 
+ #footer .gmail {
+  content: url('https://api.iconify.design/fontisto/email.svg');
+  background-repeat: no-repeat;
+  
+ }
+
+ #footer .glassdoor {
+  content: url('https://api.iconify.design/cib/glassdoor.svg');
+  background-repeat: no-repeat;
+  
+ }
+ 
+ .indeed:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  border-radius: 35%;
+ }
+ 
+ .linkedin:hover {
+  
+  border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+ 
+ .facebook:hover {
+  
+  border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+ 
+ .gmail:hover {
+
+  border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
+ 
+ .glassdoor:hover {
+
+  border-radius: 35%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+ }
 
     main {
         padding: 10px;
@@ -947,15 +1299,42 @@ nav#bottom-nav {
     .carousel-image {
         width: 80%;  /* Keeps the width at 80% for phones */
     }
-  }
+  
+/* ------------------------------------------      Fancy download button   ------------------------------- */
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 25%;
+  padding: 15px 30px;
+  background-color: #4CAF50;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
 
-/* -------------------------- rdi_logo.png  mobile -------------------------*/
+  animation: shake 0.5s;
 
-#logo {
-  height: 40px; /* Or any size that you prefer */
-  width: auto;  /* Maintain aspect ratio */
-  vertical-align: middle; /* Align the image vertically center */
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
 }
+
+
+
+/* ------------------------------------------------------ CONTACT FORM -----------------*/
+
+    #contact-form input, 
+    #contact-form textarea, 
+    #contact-form button {
+        font-size: 12px;
+    }
+    .carousel-image {
+        width: 80%;  /* Keeps the width at 80% for phones */
+    }
+  
+
 
 /*--------------------------------------------1s and 0s ANIMATION --------------------------------------------------*/
 
@@ -975,7 +1354,7 @@ nav#bottom-nav {
 .falling-binary {
   position: absolute;
   font-size: 1em;
-  color: #0ca83b; /* Classic green color */
+  color: #15a835; /* Classic green color */
   opacity: 0.8;
   white-space: nowrap;
   /*---Increase the duration range to slow down the animation -- */
@@ -999,13 +1378,23 @@ nav#bottom-nav {
 
 /* ---------------------------------------------  Main ------------------------*/
 main {
-    padding: 40px;
+  padding: 10px;
+  background-image: url('img/vault.png');
+  background-size: cover; 
+  background-position: center;
+  
+  height: 100%;
+  background-color: rgba(249, 246, 246, 0.75);
+  display: flex;
+  flex-direction: column;
+ 
+  z-index: 0;
 }
 
 /* Fixed bottom navigation ------------------------------------------------------------*/
 nav#bottom-nav {
-    background-color: #333;
-    color: white;
+    background-color: #35b7df;
+    color: rgb(6, 9, 202);
     position: bottom;  /* Fixes the position */
     bottom: 0px;  /* Pushes it up by 50px to make room for the footer */
     left: 5px;  /* Aligns the navigation to the left */
@@ -1151,17 +1540,314 @@ footer {
  background: #89cbf2;
 }
 
+/* ---------------------------------------   Skills button */
+.skills-button {
+  display: inline-block;
+  position: float;
+  margin: 35px;
+  padding: 15px 30px  10px 10px;
+  left: 25px;
+  background-color: #2095e2;  /* Green background */
+  color: white;  /* White text */
+  border:#080808 3px;
+  border-radius: 25px;  /* Rounded corners */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+  width: 150px;
+  height: 60px;
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* Hover state for download button */
+.skills-button:hover {
+  background-color: #99cef1;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.firework-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.skills-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+/* ---------------------------------------------------------------------------  vizuals2 page */
+/* ---------------------------------------   Skills button */
+.viz-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 15px 30px;
+  left: 25%;
+  background-color: #0a6f94;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+
+}
 
 
 
-/*-------------------------------------------------------500-- Phone--------------------------------- */
-/*----  MOBILE -----------------*/
 
-@media screen and (max-width: 500px) {
+/* Hover state for download button */
+.viz-button:hover {
+  background-color: #84c5f0;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.viz-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.viz-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+/*--Use Arrows --*/
+.iconify {
+  font-size: 14px;
+  vertical-align: middle; /* To align the icon with the text */
+}
+
+/* ---------------------   Slide show ---------*/
+/* ------------------------------------  slideshow w3schools  ------------------------------------------------------------ */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;               /* Full width to make it responsive */
+  position: relative;
+  margin: auto;
+  overflow: hidden;          /* To prevent any possible overflow */
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width: 100%;               /* Ensure slides are full-width */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 40px;               /* Fixed width */
+  height: 40px;              /* Fixed height */
+  margin-top: -20px;         /* Half of height */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;           /* Reduced font size for mobile */
+  transition: 0.6s ease;
+  border-radius: 50%;        /* Circular buttons */
+  background-color: #366ee6;
+  line-height: 40px;         /* Align text to center of button */
+  text-align: center;        /* Center the arrow symbols */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 5px;                /* Give a little margin from the right */
+}
+
+.prev {
+  left: 5px;                 /* Give a little margin from the left */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #070101;
+  font-size: 13px;              /* Reduced font size for mobile */
+  padding: 6px 10px;            /* Reduced padding */
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 2px #2B86C5;  /* Adjusted text shadow */
+  background-color: rgba(137, 207, 240, 0.7); /* Make background a bit transparent */
+}
+
+/* Number text (1/20 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 10px;               /* Reduced font size for mobile */
+  padding: 6px 10px;             /* Reduced padding */
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation remains unchanged */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+/* -------------------------------    STICKY LOGO    ---------------*/
+
+.sticky-logo img {
+  width: 150px; /* Adjust to desired width for mobile screens */
+}
+
+.sticky-logo {
+  top: 30%;
+  right: 2%; /* Adjust spacing from the right if needed */
+}
+
+
+
+/* -----------------------------------chatbot ----------------------- */
+
+
+#chatbotContainer {
+  width: 50%; /* Adjust width for medium screens */
+  /* Add any other required styles specific for this screen size */
+}
+
+/* Button Styles */
+.chatbot-button {
+  position: fixed;
+  background-color: #007bff;
+  color: white;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  bottom: 80px;
+  left: 10px;
+  z-index: 998;
+}
+
+
+}
+
+
+
+/*-----------400------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+@media screen and (max-width: 400px) {
 
   body {
       font-family: Arial, Helvetica, sans-serif;
-    
+      height: 100%;
+        /* Adjust based on the height of your .topnav */
     }
 
 /*---- h3 mobile -----------------*/
@@ -1189,54 +1875,26 @@ footer {
       justify-content: center; /* Also helps in horizontally centering */
       padding-top: 0em;
     }
-    
-    .mobile-container {
-      max-width: 300px;
-      margin: auto;
-      background-color: #555;
-      height: Auto;
-      color: white;
-      border-radius: 10px;
-      padding: 20px; /* Add 20 pixels of padding inside the container */
-      z-index: 1000;
-  }
-    
-    .topnav {
-      overflow: hidden;
-      background-color: #6bc9f5;
-      position: relative;
-    }
-    
-    .topnav #myLinks {
-      display: none;
-    }
-    
-    .topnav a {
-      color: white;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-      display: block;
-    }
-    
-    .topnav a.icon {
-      background: black;
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    .active {
-      background-color: #18c1f5;
-      color: white;
-    }
    
+
+    
+/*------------------------- top nav mobile -------------------------------*/
+
+a.active{
+  background-color: #000000;
+  font-size: 18px;
+  
+  }
+   
+.topnav a.icon {
+  float: right;
+  display: block;
+  color:rgb(228, 159, 10);
+  background-color:rgb(43, 44, 44);
+  border-radius: 25%;
+  font-size: 18px;
+  }
+  
 /* -------------------------------------------------------- social --------------------*/
 
     #socialnavfooter {
@@ -1266,15 +1924,42 @@ footer {
     .carousel-image {
         width: 80%;  /* Keeps the width at 80% for phones */
     }
-  }
+  
+/* ------------------------------------------      Fancy download button   ------------------------------- */
+.download-button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 25%;
+  padding: 15px 30px;
+  background-color: #e7f78d;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
 
-/* -------------------------- rdi_logo.png  mobile -------------------------*/
+  animation: shake 0.5s;
 
-#logo {
-  height: 40px; /* Or any size that you prefer */
-  width: auto;  /* Maintain aspect ratio */
-  vertical-align: middle; /* Align the image vertically center */
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
 }
+
+
+
+/* ------------------------------------------------------ CONTACT FORM -----------------*/
+
+    #contact-form input, 
+    #contact-form textarea, 
+    #contact-form button {
+        font-size: 12px;
+    }
+    .carousel-image {
+        width: 80%;  /* Keeps the width at 80% for phones */
+    }
+  
+
 
 /*--------------------------------------------1s and 0s ANIMATION --------------------------------------------------*/
 
@@ -1318,13 +2003,23 @@ footer {
 
 /* ---------------------------------------------  Main ------------------------*/
 main {
-    padding: 60px;
+  padding: 10px;
+  background-image: url('img/vault.png');
+  background-size: cover; 
+  background-position: center;
+  
+  height: 100%;
+  background-color: rgba(249, 246, 246, 0.75);
+  display: flex;
+  flex-direction: column;
+ 
+  z-index: 0;
 }
 
 /* Fixed bottom navigation ------------------------------------------------------------*/
 nav#bottom-nav {
-    background-color: #333;
-    color: white;
+    background-color: #35b7df;
+    color: rgb(6, 9, 202);
     position: bottom;  /* Fixes the position */
     bottom: 0px;  /* Pushes it up by 50px to make room for the footer */
     left: 5px;  /* Aligns the navigation to the left */
@@ -1340,7 +2035,7 @@ footer {
     text-align: center;
     padding: none;
     width: 100%;
-    position: relative;  /* Relative positioning */
+    position: bottom;  /* Relative positioning */
   }
  /* bottom  Navigation Bar ---------------------------------------------------------------*/ 
 
@@ -1370,7 +2065,8 @@ footer {
   nav#bottom-nav li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
+    font-size: 12px;
   }
 
   nav#bottom-nav li a:hover {
@@ -1387,7 +2083,7 @@ footer {
   width: 75%;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .outer-div {
@@ -1470,13 +2166,241 @@ footer {
  background: #89cbf2;
 }
 
+/* ---------------------------------------   Skills button */
+.skills-button {
+  display: inline-block;
+  position: float;
+  margin: 35px;
+  padding: 15px 30px  10px 10px;
+  left: 25px;
+  background-color: #2095e2;  /* Green background */
+  color: white;  /* White text */
+  border:#080808 3px;
+  border-radius: 25px;  /* Rounded corners */
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+  width: 150px;
+  height: 60px;
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/* Hover state for download button */
+.skills-button:hover {
+  background-color: #89c8f1;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.firework-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.skills-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+/* ---------------------------------------------------------------------------  vizuals2 page */
+/* ---------------------------------------   Skills button */
+.viz-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 15px 30px;
+  left: 25%;
+  background-color: #0a6f94;  /* Green background */
+  color: white;  /* White text */
+  border: none;
+  border-radius: 5px;  /* Rounded corners */
+  font-size: 16px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif bold;
+  text-align: center;
+  cursor: pointer;  /* Pointer/hand icon */
+  text-decoration: none;  /* Removes underline */
+
+}
 
 
 
 
+/* Hover state for download button */
+.viz-button:hover {
+  background-color: #83c5f1;  /* Darker green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  animation-play-state: paused;
+}
+
+.viz-container {
+  position: relative; /* This sets the stage for positioning the fireworks */
+  display: inline-block;
+}
+
+.viz-button {
+  /* ... your button styles ... */
+  z-index: 1; /* This will ensure the button is above the fireworks */
+}
+
+/*--Use Arrows --*/
+.iconify {
+  font-size: 14px;
+  vertical-align: middle; /* To align the icon with the text */
+}
+
+/* ---------------------   Slide show ---------*/
+/* ------------------------------------  slideshow w3schools  ------------------------------------------------------------ */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;               /* Full width to make it responsive */
+  position: relative;
+  margin: auto;
+  overflow: hidden;          /* To prevent any possible overflow */
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width: 100%;               /* Ensure slides are full-width */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 40px;               /* Fixed width */
+  height: 40px;              /* Fixed height */
+  margin-top: -20px;         /* Half of height */
+  color: white;
+  font-weight: bold;
+  font-size: 16px;           /* Reduced font size for mobile */
+  transition: 0.6s ease;
+  border-radius: 50%;        /* Circular buttons */
+  background-color: #366ee6;
+  line-height: 40px;         /* Align text to center of button */
+  text-align: center;        /* Center the arrow symbols */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 5px;                /* Give a little margin from the right */
+}
+
+.prev {
+  left: 5px;                 /* Give a little margin from the left */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #070101;
+  font-size: 13px;              /* Reduced font size for mobile */
+  padding: 6px 10px;            /* Reduced padding */
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 2px #2B86C5;  /* Adjusted text shadow */
+  background-color: rgba(137, 207, 240, 0.7); /* Make background a bit transparent */
+}
+
+/* Number text (1/20 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 10px;               /* Reduced font size for mobile */
+  padding: 6px 10px;             /* Reduced padding */
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation remains unchanged */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* -------------------------------    STICKY LOGO    ---------------*/
+
+.sticky-logo img {
+  width: 150px; /* Adjust to desired width for mobile screens */
+  right: 2px;
+}
+
+.sticky-logo {
+  top: 98%;
+  right: 2px; /* Adjust spacing from the right if needed */
+}
 
 
 
+/* -----------------------------------chatbot ----------------------- */
+
+#chatbotContainer {
+  width: 80%; /* Adjust width for small screens */
+  /* Add any other required styles specific for this screen size */
+}
+
+/* Button Styles */
+.chatbot-button {
+  position: fixed;
+  background-color: #007bff;
+  color: white;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  bottom: 220px;
+  right: 10px;
+  left: 220px;
+  z-index: 50;
+}
 
 
-
+}
