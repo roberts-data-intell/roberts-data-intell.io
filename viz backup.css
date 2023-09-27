@@ -1,0 +1,119 @@
+:root {
+  --chart-padding-desktop: 30px;
+  --chart-padding-mobile: 15px;
+}
+
+@media screen and (min-width: 801px) {
+
+  :root {
+    --chart-padding: var(--chart-padding-desktop);
+}
+}
+
+
+
+/* ------------------------------------------------------   Skills Charts on Visuals 2 page */
+
+#portfolioWidget {
+  /* Other styles remain unchanged */
+  text-align: center;
+}
+
+/* Add some general styles for the charts */
+.chart {
+  margin: auto;
+  display: block;
+  max-width: 1800px;
+  text-align: center;
+  font-size: 15px;
+}
+
+/* Styling for tooltips */
+.tooltip {
+  position: absolute;
+  background-color: rgb(11, 39, 179);
+  color:#17c7f3; 
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  /* Added z-index to ensure the tooltip appears above all other elements */
+  z-index: 1000;
+}
+
+path.line {
+  fill: none;
+  stroke: #69b3a2;
+  stroke-width: 3;
+  font-size: 55px;
+}
+
+circle.dot {
+  fill: #69b3a2;
+  stroke: #69b3a2;
+}
+
+.chart-container {
+  width: 70%; /* take up 70% of the viewport width on desktop */
+}
+
+
+/* -----------------------------------------Ensure the pieChart container takes full width */
+
+#pieChart > svg {
+  width: 100%;  /* You can adjust this as per the requirement */
+  height: 500px;
+  display: block;
+  margin: 0 auto;  /* This will help in centering the SVG horizontally on the screen */
+}
+
+.tooltip {
+  /* You can add the tooltip styling here */
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  pointer-events: none;
+  /* ... and any other styles as needed */
+}
+
+/*-------------------------------------------------------500-- Phone--------------------------------- */
+/*----  MOBILE -----------------*/
+
+@media screen and (max-width: 500px) {
+
+  :root {
+    --chart-padding: var(--chart-padding-mobile);
+  }
+}
+
+
+
+/*----------------------------------------------  visuals 2 Charts ---------------------------------------*/
+.chart-container {
+  width: 90%; /* take up 90% of the viewport width on mobile */
+  margin: 0 auto; /* center the chart */
+}
+
+
+/* -----------------------------------------Ensure the pieChart container takes full width */
+/* -----------------------------------------Ensure the pieChart container takes full width */
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
