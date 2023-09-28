@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var data = [
         { date: "2008-2012", value: 25, labelPosition: "below", position: "Art Institute of Pittsburgh", description: "Bachelor of Science" },
         { date: "2012-2019", value: 27, labelPosition: "below", position: "Bloom Business Solutions", description: "Data Analytical Power BI & Client Relations" },
-        { date: "2019-2022", value: 30, labelPosition: "above", position: "Volunteer State College", description: "Computer Science Advanced Studys"},
+        { date: "2019-2022", value: 30, labelPosition: "above", position: "Volunteer State College", description: "Computer Science Advanced Studies"},
         { date: "2019-2023", value: 32, labelPosition: "above", position: "Contract Data Analytics", description: "Power BI Development" }
     ];
 
