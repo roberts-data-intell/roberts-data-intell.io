@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stock Tracker -Roberts Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="resume_css.css">
+    <link rel="stylesheet" href="stock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="x-icon" href="img/favicon.ico">
+</head>
+  <body>
+     
+    <header>
+      <div class="animation-container"></div>
+      
+      <!-- Top Navigation Menu -->
+      <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active"><iconify-icon icon="mdi:finance"></iconify-icon>
+          Roberts Portfolio</a>
+        <a href="index.html">Cover Letter</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Business Intelligence Dashboards
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+              <a href="Skills.html">Power B I</a>
+              <a href="dev_ops.html">Dev Ops</a>
+              <a href="visuals2.html">Skills Stats</a>
+              <a href="stocks_tracker.html">Stock Tracker</a>
+              <a href="crypto_tracker.html">Crypto Tracker</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+  </header>
+  
+
+  <main>
+    <h4><span id="fireText">__________ Investment Planning __________</span></h4>
+    </div>
+
+      <!-- Container to hold the animated 1's and 0's -->
+  <div class="animation-container">
+    <!-- We'll dynamically add our falling 1's and 0's here -->
+  </div>
+
+  
+
+
+    
+        <section>
+
+
+            <div class="containerstock">
+              <div class="containercrypto">
+                <h3>Get Stock Price</h3>
+                
+                <input type="text" id="stockSymbolInput" placeholder="Enter Stock Symbol">
+                <button id="getStockPrice">Get Stock Price</button>
+                <div id="stockPriceResult" class="result-box"></div>
+                
+                <div id="multipleCrypto">
+                <div class="favoriteStocksContainer">
+                    <h3>Favorite Stocks</h3>
+                    <!-- Stock List Container -->
+          <div id="stockListContainer">
+            <ul id="stockList">
+            </div></div></div></div>
+
+
+            
+        </section>
+    </main>
+    
+   <!-- Button to toggle the chatbot -->
+   <button class="chatbot-button" onclick="toggleChatbot()">Chat with Colin</button>
+    
+   <!-- Chatbot container -->
+   <div class="chatbot-container" id="chatbotContainer">
+       <div class="chatbot-header" id="chatbotHeader">
+           Chat with Colin
+       </div>
+       <div class="chatbot-messages" id="chatbotMessages">
+           <!-- Messages will be displayed here -->
+       </div>
+       <div class="chatbot-input">
+           <input type="text" placeholder="Type your message..." id="userInput">
+           <button onclick="sendMessage()">Send</button>
+       </div>
+   </div>
+
+    <footer>
+      <!-- Bottom Navigation Bar -->
+      <nav id="bottom-nav">
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="resume.html">Resume</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="Skills.html">Dashboards</a></li>
+          </ul>
+      </nav>
+      <br>
+      <section id="footer">
+          <div class="container text-center">
+              <a href="https://my.indeed.com/p/colinr-zzg9wzr" class="indeed"></a>
+              <a href="https://www.linkedin.com/in/colin-roberts-996354165/" class="linkedin"></a>
+              <a href="https://www.facebook.com/colin.roberts.9028" class="facebook"></a>
+              <a href="https://github.com/roberts-data-intell" class="github"></a>
+              <a href="mailto:colinroberts.contact@gmail.com" class="gmail"></a>
+        </ul>
+      </section> 
+          <p>Copyright &copy; 2023 Roberts Data Intell</p>
+        </footer>
+        
+
+
+        <script src="js/mystocks.js"></script>
+        <script src="js/get_stock_price.js"></script>
+        <script src="js/doublemenu.js"></script>
+     
+        
+        <script src="js/1s_and_0s.js"></script>
+        <script src="js/fire.js"></script>
+        <script src="js/logo.js"></script>
+        <script src="js/chatbot.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <div class="sticky-logo" data-tooltip="This is the tooltip message!">
+          <img src="img/rdi_logo2.png" alt="Logo">
+      </div>
+
+
+
+    
+      </body> 
+  </html>
+
+
+     
+    
+    
+           

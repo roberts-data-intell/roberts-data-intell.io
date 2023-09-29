@@ -1,0 +1,172 @@
+.containercrypto {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#multipleCrypto {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+}
+
+.containerstock {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input box styling */
+#stockSymbolInput {
+    padding: 10px;
+    
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Removes the bullet points from the unordered list */
+#stockList {
+    list-style-type: none;  /* This removes the bullet points */
+    padding: 0;  /* Removes default padding */
+    margin: 0;  /* Removes default margin */
+    
+  }
+  
+  /* Styling the list item container */
+  .listItemContainer {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10%;
+    
+  }
+  
+  /* Animation for neon sign effect when hovered */
+  .listItemContainer:hover {
+    border: 5px;
+    background-color:rgb(42, 118, 180);
+    color: rgb(252, 248, 248);
+    animation: neon-sign 1s infinite;
+}
+
+.result-box {
+    background-color: white;
+    border: 1px solid #25a0f1;
+    padding: 16px;
+    margin-top: 16px;
+    width: 40%;
+    font-size: 14px bold;
+    
+  }
+
+  #stockPriceResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+
+
+/*-----2000-------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+/* Responsive styling */
+@media (max-width: 2000px) {
+    .stock-container {
+        width: 200px;
+    }
+}
+
+
+
+
+/*--925---------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+@media (max-width: 925px) {
+    .stock-container {
+        width: 150px;
+    }
+
+
+.result-box {
+    background-color: white;
+    border: 1px solid #25a0f1;
+    padding: 16px;
+    margin-top: 16px;
+    width: 40%;
+    font-size: 16px bold;
+    
+  }
+
+  #stockPriceResult {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    list-style-type: none;
+}
+}
+
+
+/*-400-----------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+@media (max-width: 400px) {
+    .stock-container {
+        width: 100px;
+    }
+
+
+    .result-box {
+        background-color: white;
+        border: 1px solid #25a0f1;
+        padding: 16px;
+        margin-top: 16px;
+        width: 75%;
+        font-size: 12px bold;
+        float: center;
+      }
+
+      #stockPriceResult {
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        list-style-type: none;
+    }
+}

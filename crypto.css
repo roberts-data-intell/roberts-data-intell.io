@@ -1,0 +1,216 @@
+/* Overall layout and typography */
+.containercrypto {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Input box styling */
+#cryptoSymbolInput {
+    padding: 10px;
+    
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Result display styling */
+#cryptoPriceResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+/* -------------------------------------------Multiple Crypto Section--------------------------------- */
+#multipleCrypto {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+#cryptoList {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style-type: none;  /* This should remove the bullet points */
+}
+
+.listItemContainer {
+    background-color: #fbfdfd;
+    border: 1px solid #20abeb;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10%;
+    list-style-type: none;
+  }
+
+  .listItemContainer:hover {
+    border: 5px;
+    background-color:rgb(42, 118, 180);
+    color: rgb(252, 248, 248);
+    animation: neon-sign 1s infinite;
+}
+
+
+.listItemContainer > li > span {
+    margin-right: 20px;
+    font-size: 18px;
+    list-style-type: none;
+}
+
+.containerstock {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #96deeb;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+}
+
+
+.result-box {
+    background-color: white;
+    border: 1px solid #25a0f1;
+    padding: 16px;
+    margin-top: 16px;
+    width: 40%;
+    font-size: 12px bold;
+    
+  }
+
+  #cryptoPriceResult {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+
+  /*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+@media screen and (max-width: 925px) {
+
+
+
+    #cryptoPriceResult {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        list-style-type: none;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+/*---------------------------------------------------  MOBILE -----------------*/
+
+@media screen and (max-width: 400px) {
+
+/* Input box styling */
+#cryptoSymbolInput {
+    padding: 10px;
+    width: 45%;
+    font-size: 14px;
+}
+
+
+    .result-box {
+        background-color: white;
+        border: 1px solid #25a0f1;
+        padding: 16px;
+        margin-top: 16px;
+        width: 75%;
+        font-size: 2px;
+        float: center;
+      }
+
+      /* Result display styling */
+#cryptoPriceResult {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+#cryptoPriceResult {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    list-style-type: none;
+}
+
+}
