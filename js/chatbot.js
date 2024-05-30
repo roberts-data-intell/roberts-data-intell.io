@@ -98,7 +98,7 @@ function provideOptions() {
     appendMessage("5. Are You looking for Azure Dev Ops API's to Power BI operations?");
     appendMessage("6. Consultant on ETL process for MySql databases process to reports?");
     appendMessage("7. Consultant on ETL process for Postgres databases process to reports?");
-    appendMessage("8. Looking for Data Mining operations from Excel or Pdfs?");
+    appendMessage("8. Looking for Data Mining or webscraping operations from web pages, js files, databases or Pdfs?");
     appendMessage("9. Are you looking for API's to extract transform and clean data before loading?");
     appendMessage("10. AZURE KPI's API's data analytics operator to conduct dev ops in AZURE?");
     appendMessage("Input #1 through #10 & click Send or hit 'ENTER'");
